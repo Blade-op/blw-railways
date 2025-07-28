@@ -177,3 +177,51 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - React team for the amazing framework
 - MongoDB for the database
 - Tailwind CSS for the styling framework 
+
+## 🔧 The Issue:
+
+Your frontend is still trying to connect to `localhost:5000` instead of your Railway backend URL. Let's check and fix this.
+
+## 🔍 Step 1: Test Your Backend Directly
+
+First, let's verify if your Railway backend is actually working. Open a new browser tab and visit:
+
+```
+https://blw-railways-production.up.railway.app/api/test
+```
+
+**What do you see?**
+- ✅ If you see `{"message": "Backend server is running!"}` - backend is working
+- ❌ If you see an error or nothing - backend has issues
+
+## 🔍 Step 2: Check Railway Backend Status
+
+Go to your Railway dashboard and check:
+1. **Is your backend still showing "ACTIVE"?**
+2. **Are there any error messages in the logs?**
+3. **Click "View logs"** to see if there are any startup errors
+
+## 🔍 Step 3: Check Browser Console
+
+1. **Open your Vercel frontend**
+2. **Press F12** to open developer tools
+3. **Go to Console tab**
+4. **Look for any error messages** when the page loads
+5. **Tell me what errors you see**
+
+## 🔍 Step 4: Add Environment Variables to Railway
+
+Your backend might be failing because it doesn't have the MongoDB connection. Let's add it:
+
+1. **Go to Railway dashboard**
+2. **Click "Variables" tab**
+3. **Add these environment variables:**
+   ```
+   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/blw-railways?retryWrites=true&w=majority
+   PORT=5000
+   NODE_ENV=production
+   ```
+
+## 🔍 Step 5: Check CORS Configuration
+
+The issue might be CORS (Cross-Origin Resource Sharing). Let me check your backend CORS settings:
