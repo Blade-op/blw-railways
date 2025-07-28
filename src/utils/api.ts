@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://clever-integrity-production.up.railway.app/api'  // Railway backend URL
+  ? 'https://blw-railways-production.up.railway.app/api'  // Railway backend URL
   : 'http://localhost:5000/api';
 
 export const api = axios.create({
