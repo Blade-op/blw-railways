@@ -38,7 +38,7 @@ app.use('*', (req, res) => {
 // MongoDB connection
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/blw-railways', {
+    const conn = await mongoose.connect('mongodb+srv://ayushparasher555:ayush1234@cluster0.k0v54n8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
